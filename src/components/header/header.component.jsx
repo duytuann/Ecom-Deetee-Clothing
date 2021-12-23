@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 import { auth } from '../../firebase/firebase.utils'
+import { signOut } from 'firebase/auth'
 
 import { ReactComponent as Logo } from '../../assets/logo.svg'
 
@@ -18,7 +19,12 @@ const Header = ({ currentUser }) => (
             {
                 currentUser
                     ? (
-                        <div className="option" onClick={() => auth.signOut}>SIGN OUT</div>
+                        <div
+                            className="option logout"
+                            onClick={async e => {
+                                e.preventDefault()
+                                await signOut(auth)
+                            }}>SIGN OUT</div>
                     )
                     : (
                         <Link className="option" to="/signin">SIGN IN</Link>
@@ -27,4 +33,5 @@ const Header = ({ currentUser }) => (
         </div>
     </div>
 )
+
 export default Header
