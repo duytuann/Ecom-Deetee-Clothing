@@ -20,7 +20,7 @@ const Header = ({ currentUser }) => (
                 currentUser
                     ? (
                         <div
-                            className="option logout"
+                            className="option"
                             onClick={async e => {
                                 e.preventDefault()
                                 await signOut(auth)
