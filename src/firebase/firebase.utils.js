@@ -20,7 +20,7 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
     const userRef = doc(db, 'users', `${userAuth.uid}`)
     const userSnap = await getDoc(userRef)
 
-    if (!userSnap.exists) {
+    if (!userSnap.exists()) {
         const { displayName, email } = userAuth
         const createdAt = new Date()
 
