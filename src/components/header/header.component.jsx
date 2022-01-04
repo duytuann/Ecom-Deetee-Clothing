@@ -25,7 +25,7 @@ const Header = ({ currentUser, hidden }) => (
             </Link>
             {currentUser ? (
                 <div
-                    classNam e="option"
+                    className="option"
                     onClick={async (e) => {
                         e.preventDefault();
                         await signOut(auth);
