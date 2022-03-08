@@ -23,8 +23,8 @@ const Header = ({ currentUser, hidden }) => (
       <LogoSVG></LogoSVG>
     </LogoContainer>
     <OptionsContainer>
-      <OptionLink to="shop">SHOP</OptionLink>
-      <OptionLink to="shop">CONTACT</OptionLink>
+      <OptionLink to="/shop">SHOP</OptionLink>
+      <OptionLink to="/contact">CONTACT</OptionLink>
       {currentUser ? (
         <OptionLink
           as="div"

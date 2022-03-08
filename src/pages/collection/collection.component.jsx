@@ -9,9 +9,10 @@ import {
   CollectionPageContainer,
   CollectionTitle,
   CollectionItemsContainer,
-} from "./collection.styles.jsx";
+} from "./collection.styles";
 
 const CollectionPage = ({ collection }) => {
+  console.log(collection);
   const { title, items } = collection;
   return (
     <CollectionPageContainer>
